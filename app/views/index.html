@@ -55,10 +55,12 @@ which module to associate the app with. In app.js we create the "dinnerPlanner" 
       <div ng-controller="MainController">
           <div ng-repeat="filter in filters">
               <p>{{filter.name}}</p>
-              <label ng-repeat="value in filter.values">
-                <input type="checkbox" ng-model="value.selected"/>
-                  {{value.value}}
-              </label>
+              <div ng-repeat="value in filter.values">
+                  <label>
+                    <input type="checkbox" ng-model="value.selected"/>
+                      {{value.name}}
+                  </label><br/>
+              </div>
           </div>
       </div>
 
